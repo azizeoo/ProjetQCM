@@ -5,10 +5,14 @@ import java.util.Collection;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 /**
  * @author HBALI
@@ -27,8 +31,8 @@ public class Questionnaire {
 
 	@ManyToOne
 	private User user;
-	
-	@ManyToMany(cascade= CascadeType.ALL)
+	@Fetch(FetchMode.SELECT)
+	@ManyToMany(cascade= CascadeType.ALL, fetch=FetchType.LAZY)
     private Collection<Subscriber> subscribers;
 	
 	public Questionnaire(long idQuestionnaire, Topic topic) {

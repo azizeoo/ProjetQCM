@@ -5,9 +5,13 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
 
 /**
  * @author technomaker04
@@ -23,8 +27,8 @@ public class Topic {
 	
 	@Column(name = "TOPIC_LIB")
 	private String libelle;
-	
-	@OneToMany(cascade= CascadeType.ALL)
+	@Fetch(FetchMode.SELECT)
+	@OneToMany(cascade= CascadeType.ALL, fetch=FetchType.LAZY)
 	private List<Question> lesQuestions;
 	
 	public Topic(long idTopic, String libelle) {
