@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hbm2ddl.auto">create</property>
+		<mapping class="ma.norsys.formation.entities.Question" />
+		<mapping class="ma.norsys.formation.entities.Questionnaire" />
+		<mapping class="ma.norsys.formation.entities.Response" />
+		<mapping class="ma.norsys.formation.entities.Subscriber" />
+		<mapping class="ma.norsys.formation.entities.Topic" />
+		<mapping class="ma.norsys.formation.entities.User" />
+	</session-factory>
+
+</hibernate-configuration>
