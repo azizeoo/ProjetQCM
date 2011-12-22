@@ -32,7 +32,6 @@ public class QCMController {
 	@RequestMapping("/formulaire")
 	protected ModelAndView handleRequestInternal(HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		System.out.println("test"+ request.getParameter("iduser"));
 		long iduser = Long.valueOf(request.getParameter("iduser"));
 		long idques = Long.valueOf(request.getParameter("idques"));
 		Questionnaire questionnaireDB = serviceQuestionnaire.findQuetinnaireById(idques);

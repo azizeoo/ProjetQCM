@@ -6,6 +6,8 @@
 <title>Merci</title>
 </head>
 <body>
-	Merci pour participation Mr/Mlle: <c:out value="${subscriber.firstName}" />
+	Merci pour participation Mr/Mlle:
+	<strong><c:out value="${subscriberDB.firstName}" />, <c:out
+			value="${subscriberDB.lastName}" /></strong>
 </body>
 </html>

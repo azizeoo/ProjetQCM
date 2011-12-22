@@ -28,7 +28,7 @@ public class Topic {
 	@Column(name = "TOPIC_LIB")
 	private String libelle;
 	@Fetch(FetchMode.SELECT)
-	@OneToMany(cascade= CascadeType.ALL, fetch=FetchType.LAZY)
+	@OneToMany(cascade= CascadeType.ALL, fetch=FetchType.EAGER)
 	private List<Question> lesQuestions;
 	
 	public Topic(long idTopic, String libelle) {

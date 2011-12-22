@@ -31,8 +31,8 @@ public class Questionnaire {
 
 	@ManyToOne
 	private User user;
-	@Fetch(FetchMode.SELECT)
-	@ManyToMany(cascade= CascadeType.ALL, fetch=FetchType.LAZY)
+
+	@ManyToMany(cascade= CascadeType.ALL, fetch=FetchType.EAGER)
     private Collection<Subscriber> subscribers;
 	
 	public Questionnaire(long idQuestionnaire, Topic topic) {
