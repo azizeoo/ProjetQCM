@@ -15,12 +15,12 @@
 			</li>
 			<hr />
 		</c:forEach>
-		<ul>
+		<ol>
 
 			<c:forEach items="${questionnaire.topic.lesQuestions}" var="question">
 				<li><input type="hidden" name="questionss"
 					value="${question.libelle}"> <strong><c:out
-							value="${question.libelle}" /></strong></li>
+							value="${question.libelle}" /></strong></li><br>
 				<c:forEach items="${question.lesReponses}" var="reponse">
 
 					<input type="checkbox" name="response" value="${reponse.libelle}">
@@ -29,8 +29,8 @@
 				</c:forEach>
 				<hr />
 			</c:forEach>
-		</ul>
+		</ol>
 		<hr />
-		<input type="submit" />
+		<input type="submit" value="valider le QCM"/>
 	</form>
 </html>
